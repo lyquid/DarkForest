@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://con8i8ic2e0k"]
+
+[ext_resource type="Script" path="res://weapons/laser cannon/LaserCannon.gd" id="1_3fd6t"]
+
+[node name="LaserCannon" type="Node2D"]
+script = ExtResource("1_3fd6t")
+
+[node name="Cooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

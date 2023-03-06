@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtn7rn83p4uxb"]
+
+[ext_resource type="Script" path="res://weapons/laser cannon/Laser.gd" id="1_b6pu3"]
+[ext_resource type="PackedScene" uid="uid://cclnjy8jduubk" path="res://weapons/Projectile.tscn" id="1_i5yt0"]
+[ext_resource type="Texture2D" uid="uid://b3eeiiuhr7gqj" path="res://weapons/laser cannon/graphics/laser.png" id="2_6ckhh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgegw"]
+size = Vector2(8, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ks46b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6ckhh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Laser" instance=ExtResource("1_i5yt0")]
+script = ExtResource("1_b6pu3")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_mgegw")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_ks46b")
+
+[node name="DisableTimer" type="Timer" parent="." index="2"]
+
+[connection signal="timeout" from="DisableTimer" to="." method="_on_disable_timer_timeout"]

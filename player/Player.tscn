@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3ncj4ewaxn75"]
+
+[ext_resource type="Script" path="res://player/Player.gd" id="1_2bh5p"]
+[ext_resource type="Texture2D" uid="uid://da5uw84h2r5ij" path="res://player/graphics/drone.png" id="2_f6ky8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3njc0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f6ky8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjcxn"]
+size = Vector2(14, 10)
+
+[node name="Player" type="CharacterBody2D" groups=["Players"]]
+script = ExtResource("1_2bh5p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3njc0")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qjcxn")
+
+[node name="Camera2D" type="Camera2D" parent="."]

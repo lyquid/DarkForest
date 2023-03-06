@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cclnjy8jduubk"]
+
+[ext_resource type="Script" path="res://weapons/Projectile.gd" id="1_y3kpj"]
+
+[node name="Projectile" type="Area2D" groups=["Projectiles", "Weapons"]]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_y3kpj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
