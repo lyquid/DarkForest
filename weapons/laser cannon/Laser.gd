@@ -16,7 +16,3 @@ func setup(damage_in: int, speed_in: float, direction_in: Vector2) -> Node2D:
 	direction = direction_in
 	rotation = direction_in.angle()
 	return self
-
-
-func _on_disable_timer_timeout():
-	get_tree().queue_delete(self)

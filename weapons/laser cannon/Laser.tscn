@@ -26,7 +26,3 @@ shape = SubResource("RectangleShape2D_mgegw")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_ks46b")
-
-[node name="DisableTimer" type="Timer" parent="." index="2"]
-
-[connection signal="timeout" from="DisableTimer" to="." method="_on_disable_timer_timeout"]

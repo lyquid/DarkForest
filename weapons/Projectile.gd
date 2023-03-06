@@ -12,4 +12,9 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print(body)
+	body.hit(damage)
+	get_tree().queue_delete(self)
+
+
+func _on_disable_timer_timeout():
+	get_tree().queue_delete(self)

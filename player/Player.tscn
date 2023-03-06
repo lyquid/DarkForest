@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3ncj4ewaxn75"]
+[gd_scene load_steps=6 format=3 uid="uid://d3ncj4ewaxn75"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_2bh5p"]
-[ext_resource type="Texture2D" uid="uid://da5uw84h2r5ij" path="res://player/graphics/drone.png" id="2_f6ky8"]
+[ext_resource type="Texture2D" uid="uid://bqrsc3v8rwqbh" path="res://player/graphics/drone.png" id="2_f6ky8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3njc0"]
 animations = [{
@@ -15,7 +15,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjcxn"]
-size = Vector2(14, 10)
+size = Vector2(24, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhkog"]
+radius = 426.676
 
 [node name="Player" type="CharacterBody2D" groups=["Players"]]
 script = ExtResource("1_2bh5p")
@@ -28,3 +31,13 @@ animation = &"idle"
 shape = SubResource("RectangleShape2D_qjcxn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="EnemyEngagementZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyEngagementZone"]
+shape = SubResource("CircleShape2D_xhkog")
+
+[connection signal="body_entered" from="EnemyEngagementZone" to="." method="_on_enemy_engagement_zone_body_entered"]
+[connection signal="body_exited" from="EnemyEngagementZone" to="." method="_on_enemy_engagement_zone_body_exited"]

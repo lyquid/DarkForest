@@ -30,5 +30,12 @@ func look_follow(state, current_transform, target_position):
 	state.angular_velocity = up_dir * (rotation_angle / state.step)
 
 
+func hit(damage_in: int):
+	health -= damage_in
+	if health < 0.0:
+		emit_signal("death")
+		get_tree().queue_delete(self)
+
+
 func _on_ai_timer_timeout():
 	direction = (player.position - position).normalized()

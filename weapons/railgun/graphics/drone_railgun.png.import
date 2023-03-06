@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrsc3v8rwqbh"
-path="res://.godot/imported/drone.png-64e009a10cdbe72e0ebeb194dd672469.ctex"
+uid="uid://b7fbomvsglquu"
+path="res://.godot/imported/drone_railgun.png-d94e3d20c2f36a08b8043fa713a3b888.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/graphics/drone.png"
-dest_files=["res://.godot/imported/drone.png-64e009a10cdbe72e0ebeb194dd672469.ctex"]
+source_file="res://weapons/railgun/graphics/drone_railgun.png"
+dest_files=["res://.godot/imported/drone_railgun.png-d94e3d20c2f36a08b8043fa713a3b888.ctex"]
 
 [params]
 

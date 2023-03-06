@@ -2,8 +2,8 @@ extends Node
 
 class_name EnemiesManager
 
-const DEFAULT_SPAWN_TIME := 0.2
-const MAX_ENEMIES := 10
+const DEFAULT_SPAWN_TIME := 0.1
+const MAX_ENEMIES := 500
 
 @onready var player := get_tree().root.get_node("Main/Player")
 @onready var enemy_spawner := $EnemySpawner
