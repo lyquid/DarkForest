@@ -35,7 +35,7 @@ func get_nearest_enemy() -> Enemy:
 	# you should always check "are_enemies_available" before calling this func
 	assert(not enemies.is_empty())
 	for enemy in enemies:
-		var current_distance = enemy.position.distance_squared_to(position)
+		var current_distance = enemy.global_position.distance_squared_to(global_position)
 		if current_distance < shortest_distance:
 			shortest_distance = current_distance
 			nearest_enemy_index = current_index
