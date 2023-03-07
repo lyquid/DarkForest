@@ -2,7 +2,7 @@ extends Weapon
 
 class_name Railgun
 
-const DEFAULT_RAILGUN_COOLDOWN_TIME := 0.8
+const DEFAULT_RAILGUN_COOLDOWN_TIME := 0.4
 const DEFAULT_HVP_DAMAGE := 50
 const DEFAULT_HVP_PIERCING_POWER := 60
 const DEFAULT_HVP_SPEED := 800.0

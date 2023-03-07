@@ -22,5 +22,5 @@ func setup(damage_in: int, speed_in: float, direction_in: Vector2, piercing_powe
 func _on_body_entered(body):
 	body.hit(damage)
 	piercing_power -= 1
-	if not piercing_power:
+	if piercing_power <= 0:
 		get_tree().queue_delete(self)

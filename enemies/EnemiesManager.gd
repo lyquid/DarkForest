@@ -44,7 +44,7 @@ func instance_enemy(enemy_type):
 	assert(!err)
 #	enemy_spawner.spawn_enemy(enemy)
 	enemy_spawn_location.progress_ratio = randi()
-	enemy.position = enemy_spawn_location.position + player.position
+	enemy.position = enemy_spawn_location.global_position + player.global_position
 
 	enemies_count += 1
 
