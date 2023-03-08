@@ -23,4 +23,4 @@ func _on_body_entered(body):
 	body.hit(damage)
 	piercing_power -= 1
 	if piercing_power <= 0:
-		get_tree().queue_delete(self)
+		queue_free()

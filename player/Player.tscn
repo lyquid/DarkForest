@@ -21,6 +21,7 @@ size = Vector2(24, 18)
 radius = 426.676
 
 [node name="Player" type="CharacterBody2D" groups=["Players"]]
+y_sort_enabled = true
 script = ExtResource("1_2bh5p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
