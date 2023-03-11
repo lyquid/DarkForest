@@ -4,7 +4,7 @@ class_name LaserCannon
 
 const DEFAULT_LASER_CANNON_COOLDOWN_TIME := 0.4
 const DEFAULT_LASER_DAMAGE := 10
-const DEFAULT_LASER_SPEED := 400.0
+const DEFAULT_LASER_SPEED := 300.0
 
 @onready var main := get_tree().root.get_node("Main")
 @onready var player := get_tree().root.get_node("Main/Player")

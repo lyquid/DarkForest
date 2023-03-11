@@ -1,24 +1,78 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtn7rn83p4uxb"]
+[gd_scene load_steps=14 format=3 uid="uid://dtn7rn83p4uxb"]
 
 [ext_resource type="Script" path="res://weapons/laser cannon/Laser.gd" id="1_b6pu3"]
 [ext_resource type="PackedScene" uid="uid://cclnjy8jduubk" path="res://weapons/Projectile.tscn" id="1_i5yt0"]
-[ext_resource type="Texture2D" uid="uid://b3eeiiuhr7gqj" path="res://weapons/laser cannon/graphics/laser.png" id="2_6ckhh"]
+[ext_resource type="Texture2D" uid="uid://cyaiknpowwo31" path="res://weapons/laser cannon/graphics/laser.png" id="2_6ckhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgegw"]
 size = Vector2(8, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg4rb"]
+atlas = ExtResource("2_6ckhh")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2wab"]
+atlas = ExtResource("2_6ckhh")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffdut"]
+atlas = ExtResource("2_6ckhh")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e32fd"]
+atlas = ExtResource("2_6ckhh")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uuk4"]
+atlas = ExtResource("2_6ckhh")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii1qy"]
+atlas = ExtResource("2_6ckhh")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sljby"]
+atlas = ExtResource("2_6ckhh")
+region = Rect2(48, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08sai"]
+atlas = ExtResource("2_6ckhh")
+region = Rect2(56, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ks46b"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6ckhh")
+"texture": SubResource("AtlasTexture_cg4rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2wab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffdut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e32fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uuk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii1qy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sljby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08sai")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 24.0
 }]
 
 [node name="Laser" instance=ExtResource("1_i5yt0")]
+z_index = -1
 script = ExtResource("1_b6pu3")
 
 [node name="CollisionShape2D" parent="." index="0"]

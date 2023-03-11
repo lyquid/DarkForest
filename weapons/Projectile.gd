@@ -2,6 +2,7 @@ extends Area2D
 
 class_name Projectile
 
+@onready var animated_sprite := $AnimatedSprite2D
 var damage: int
 var direction: Vector2
 var speed: float
