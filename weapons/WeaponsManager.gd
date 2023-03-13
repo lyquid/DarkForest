@@ -2,6 +2,9 @@ extends Node2D
 
 class_name WeaponsManager
 
+@onready var main := get_tree().root.get_node("Main")
+@onready var player := get_tree().root.get_node("Main/Player")
+
 var laser_cannon_scene := preload("res://weapons/laser cannon/LaserCannon.tscn")
 var railgun_scene := preload("res://weapons/railgun/Railgun.tscn")
 
