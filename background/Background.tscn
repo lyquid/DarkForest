@@ -8,5 +8,6 @@
 motion_mirroring = Vector2(1440, 810)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+modulate = Color(0.658824, 0.658824, 0.658824, 1)
 texture = ExtResource("1_fhx8w")
 offset = Vector2(427, 240)
