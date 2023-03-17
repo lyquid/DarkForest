@@ -11,7 +11,7 @@ func _ready():
 	disable_timer.start()
 
 
-func setup(damage_in: int, speed_in: float, direction_in: Vector2, piercing_power_in: int) -> Node2D:
+func setup(damage_in: int, speed_in: float, direction_in: Vector2, piercing_power_in: int) -> Projectile:
 	damage = damage_in
 	speed = speed_in
 	direction = direction_in

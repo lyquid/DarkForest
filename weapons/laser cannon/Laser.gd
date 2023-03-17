@@ -11,7 +11,7 @@ func _ready():
 	animated_sprite.play("default")
 
 
-func setup(damage_in: int, speed_in: float, direction_in: Vector2) -> Node2D:
+func setup(damage_in: int, speed_in: float, direction_in: Vector2) -> Projectile:
 	damage = damage_in
 	speed = speed_in
 	direction = direction_in

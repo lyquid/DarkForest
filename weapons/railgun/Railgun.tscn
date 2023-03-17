@@ -42,6 +42,7 @@ damping_curve = SubResource("CurveTexture_8ivd3")
 color_ramp = SubResource("GradientTexture1D_if8wf")
 
 [node name="RailGun" type="Node2D"]
+z_index = 2
 script = ExtResource("1_3nadx")
 
 [node name="Cooldown" type="Timer" parent="."]

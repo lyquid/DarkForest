@@ -6,14 +6,13 @@ const DEFAULT_LASER_CANNON_COOLDOWN_TIME := 0.4
 const DEFAULT_LASER_DAMAGE := 10
 const DEFAULT_LASER_SPEED := 300.0
 
-
 @onready var cooldown_timer := $Cooldown
 var laser_scene := preload("res://weapons/laser cannon/Laser.tscn")
-var cooldown := DEFAULT_LASER_CANNON_COOLDOWN_TIME
 
 
 func _ready():
 	manager = get_parent()
+	cooldown = DEFAULT_LASER_CANNON_COOLDOWN_TIME
 	damage = DEFAULT_LASER_DAMAGE
 	speed = DEFAULT_LASER_SPEED
 	weapon_name = "Laser cannon"
