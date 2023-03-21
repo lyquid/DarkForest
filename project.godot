@@ -23,6 +23,10 @@ window/size/window_width_override=1366
 window/size/window_height_override=768
 window/stretch/mode="viewport"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/castillo_a/source/repos/DarkForest/movies/test.avi"
+
 [input]
 
 up={

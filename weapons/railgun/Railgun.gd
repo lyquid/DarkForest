@@ -2,9 +2,9 @@ extends Weapon
 
 class_name Railgun
 
-const DEFAULT_RAILGUN_COOLDOWN_TIME := 0.4
-const DEFAULT_HVP_DAMAGE := 50
-const DEFAULT_HVP_PIERCING_POWER := 60
+const DEFAULT_RAILGUN_COOLDOWN_TIME := 0.8
+const DEFAULT_HVP_DAMAGE := 20
+const DEFAULT_HVP_PIERCING_POWER := 3
 const DEFAULT_HVP_SPEED := 700.0
 
 @onready var cooldown_timer := $Cooldown
@@ -44,7 +44,7 @@ func shoot():
 		hvp.position = manager.player.position
 		manager.main.add_child(hvp)
 		shoot_particles.emitting = true
-	
+
 	target = request_target()
 
 

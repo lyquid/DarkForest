@@ -7,7 +7,7 @@ signal died
 
 @onready var player := get_tree().root.get_node("Main/Player")
 @onready var animated_sprite := $AnimatedSprite2D
-
+@onready var animation_player := $AnimationPlayer
 var damage: int
 var direction: Vector2
 var enemy_name: String
@@ -26,8 +26,10 @@ func die():
 
 func hit(damage_in: int):
 	health -= damage_in
-	if health < 0.0:
+	if health <= 0:
 		die()
+	else:
+		animation_player.play("hit")
 
 
 func _on_ai_timer_timeout():

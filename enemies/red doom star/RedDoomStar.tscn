@@ -1,8 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://cpsd0npg7jkfu"]
+[gd_scene load_steps=31 format=3 uid="uid://cpsd0npg7jkfu"]
 
 [ext_resource type="PackedScene" uid="uid://dyb3qf4a05yr4" path="res://enemies/Enemy.tscn" id="1_shiro"]
 [ext_resource type="Script" path="res://enemies/red doom star/RedDoomStar.gd" id="2_swxfm"]
 [ext_resource type="Texture2D" uid="uid://cbm5f6kjbqfm0" path="res://enemies/doom star/graphics/doom-star2.png" id="3_mhlp8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_foe0v"]
+friction = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4yfpm"]
 radius = 12.0416
@@ -184,6 +187,7 @@ animations = [{
 }]
 
 [node name="RedDoomStar" instance=ExtResource("1_shiro")]
+physics_material_override = SubResource("PhysicsMaterial_foe0v")
 script = ExtResource("2_swxfm")
 
 [node name="CollisionShape2D" parent="." index="0"]

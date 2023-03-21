@@ -11,8 +11,8 @@ var torpedo_launcher_scene := preload("res://weapons/torpedo launcher/TorpedoLau
 
 
 func _ready():
-#	var laser_cannon := laser_cannon_scene.instantiate()
-#	add_child(laser_cannon)
+	var laser_cannon := laser_cannon_scene.instantiate()
+	add_child(laser_cannon)
 	var railgun := railgun_scene.instantiate()
 	add_child(railgun)
 	var torpedo_launcher := torpedo_launcher_scene.instantiate()

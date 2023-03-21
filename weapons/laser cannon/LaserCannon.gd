@@ -3,7 +3,7 @@ extends Weapon
 class_name LaserCannon
 
 const DEFAULT_LASER_CANNON_COOLDOWN_TIME := 0.4
-const DEFAULT_LASER_DAMAGE := 10
+const DEFAULT_LASER_DAMAGE := 5
 const DEFAULT_LASER_SPEED := 300.0
 
 @onready var cooldown_timer := $Cooldown

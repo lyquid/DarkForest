@@ -2,8 +2,8 @@ extends Weapon
 
 class_name TorpedoLauncher
 
-const DEFAULT_TORPEDO_LAUNCHER_COOLDOWN_TIME := 0.1
-const DEFAULT_TORPEDO_DAMAGE := 100
+const DEFAULT_TORPEDO_LAUNCHER_COOLDOWN_TIME := 0.2
+const DEFAULT_TORPEDO_DAMAGE := 10
 # Torpedo bays in order of shooting
 enum Bay { TOP_LEFT, BOTTOM_RIGHT, BOTTOM_LEFT, TOP_RIGHT }
 
