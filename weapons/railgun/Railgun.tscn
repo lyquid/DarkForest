@@ -46,6 +46,7 @@ z_index = 2
 script = ExtResource("1_3nadx")
 
 [node name="Cooldown" type="Timer" parent="."]
+one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_kymv2")
