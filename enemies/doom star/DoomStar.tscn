@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemies/doom star/DoomStar.gd" id="1_gak7n"]
 [ext_resource type="PackedScene" uid="uid://dyb3qf4a05yr4" path="res://enemies/Enemy.tscn" id="1_v4ya1"]
-[ext_resource type="Texture2D" uid="uid://cbm5f6kjbqfm0" path="res://enemies/doom star/graphics/doom-star2.png" id="2_0d1sp"]
+[ext_resource type="Texture2D" uid="uid://cq4i3fst3scbt" path="res://enemies/doom star/graphics/doom-star2.png" id="2_0d1sp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tlytr"]
 friction = 0.1
@@ -196,3 +196,9 @@ shape = SubResource("CircleShape2D_qx5s7")
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_6jdmo")
 animation = &"idle"
+
+[node name="DamageLabel" parent="." index="4"]
+offset_left = -19.0
+offset_top = -27.0
+offset_right = 21.0
+offset_bottom = -4.0
