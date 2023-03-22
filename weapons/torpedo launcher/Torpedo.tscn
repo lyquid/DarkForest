@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://wwy2062jige1"]
+[gd_scene load_steps=28 format=3 uid="uid://wwy2062jige1"]
 
 [ext_resource type="PackedScene" uid="uid://cclnjy8jduubk" path="res://weapons/Projectile.tscn" id="1_kwytn"]
 [ext_resource type="Script" path="res://weapons/torpedo launcher/Torpedo.gd" id="2_21xit"]
@@ -172,6 +172,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfgg2"]
+
 [node name="Torpedo" instance=ExtResource("1_kwytn")]
 z_index = 1
 script = ExtResource("2_21xit")
@@ -196,6 +198,15 @@ monitorable = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Radar" index="0"]
 polygon = PackedVector2Array(320, -128, 320, 128, 8, 0)
 disabled = true
+
+[node name="Explosion" type="Area2D" parent="." index="5"]
+position = Vector2(4, 0)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion" index="0"]
+shape = SubResource("CircleShape2D_nfgg2")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="IgnitionTimer" to="." method="_on_ignition_timer_timeout"]

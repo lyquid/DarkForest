@@ -5,14 +5,20 @@ const DEFAULT_TORPEDO_DISABLE_TIME := 12.0
 
 @onready var main := get_tree().root.get_node("Main")
 @onready var player := get_tree().root.get_node("Main/Player")
+@onready var collision_shape := $CollisionShape2D
 @onready var disable_timer := $DisableTimer
+@onready var explosion := $Explosion
+@onready var explosion_shape := $Explosion/CollisionShape2D
 @onready var ignition_timer := $IgnitionTimer
 var acceleration := DEFAULT_TORPEDO_ACCELERATION
+var detonated := false
+var explosion_radius: float
 var ignited := false
 var target: Enemy = null
 
 
 func _ready():
+	explosion_shape.shape.radius = explosion_radius
 	disable_timer.wait_time = DEFAULT_TORPEDO_DISABLE_TIME
 	disable_timer.start()
 	ignition_timer.start()
@@ -20,17 +26,29 @@ func _ready():
 
 
 func _process(delta):
-	if ignited:
-		speed += acceleration * delta
-		position += speed * delta * direction
-		if is_instance_valid(target):
-			direction = (target.position - position).normalized()
-			look_at(target.global_position)
+	if not detonated:
+		if ignited:
+			speed += acceleration * delta
+			position += speed * delta * direction
+			if is_instance_valid(target):
+				direction = (target.position - position).normalized()
+				look_at(target.global_position)
+	else: # detonated
+		if explosion.has_overlapping_bodies():
+			for enemy in explosion.get_overlapping_bodies():
+				enemy.hit(damage)
+		queue_free()
 
 
-func setup(damage_in: int) -> Projectile:
+func setup(damage_in: int, expl_radius: float) -> Projectile:
+	explosion_radius = expl_radius
 	damage = damage_in
 	return self
+
+
+func _on_body_entered(_body):
+	if ignited:
+		detonated = true
 
 
 func _on_ignition_timer_timeout():

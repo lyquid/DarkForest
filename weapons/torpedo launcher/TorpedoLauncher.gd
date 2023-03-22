@@ -2,13 +2,15 @@ extends Weapon
 
 class_name TorpedoLauncher
 
-const DEFAULT_TORPEDO_LAUNCHER_COOLDOWN_TIME := 0.2
+const DEFAULT_TORPEDO_LAUNCHER_COOLDOWN_TIME := 0.4
 const DEFAULT_TORPEDO_DAMAGE := 10
+const DEFAULT_TORPEDO_EXPLOSION_RADIUS := 35.0
 # Torpedo bays in order of shooting
 enum Bay { TOP_LEFT, BOTTOM_RIGHT, BOTTOM_LEFT, TOP_RIGHT }
 
 @onready var cooldown_timer := $Cooldown
 var torpedo_scene := preload("res://weapons/torpedo launcher/Torpedo.tscn")
+var explosion_radius := DEFAULT_TORPEDO_EXPLOSION_RADIUS
 var current_bay := Bay.TOP_LEFT
 
 
@@ -22,7 +24,7 @@ func _ready():
 
 
 func shoot():
-	var torpedo: Projectile = torpedo_scene.instantiate().setup(damage)
+	var torpedo: Projectile = torpedo_scene.instantiate().setup(damage, explosion_radius)
 	match current_bay:
 		Bay.TOP_LEFT:
 			torpedo.position = Vector2(-10.0, -10.0)
