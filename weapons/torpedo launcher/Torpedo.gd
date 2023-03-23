@@ -10,6 +10,7 @@ const DEFAULT_TORPEDO_DISABLE_TIME := 12.0
 @onready var explosion := $Explosion
 @onready var explosion_shape := $Explosion/CollisionShape2D
 @onready var ignition_timer := $IgnitionTimer
+var explosion_scene := preload("res://weapons/torpedo launcher/TorpedoExplosion.tscn")
 var acceleration := DEFAULT_TORPEDO_ACCELERATION
 var detonated := false
 var explosion_radius: float
@@ -49,6 +50,9 @@ func setup(damage_in: int, expl_radius: float) -> Projectile:
 func _on_body_entered(_body):
 	if ignited:
 		detonated = true
+		var explosion_graphics = explosion_scene.instantiate()
+		explosion_graphics.position = global_position
+		main.add_child(explosion_graphics)
 
 
 func _on_ignition_timer_timeout():

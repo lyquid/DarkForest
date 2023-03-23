@@ -12,6 +12,8 @@ signal died
 @onready var damage_label := $DamageLabel
 @onready var damage_label_timer := $DamageLabel/DamageLabelTimer
 @onready var death_timer := $DeathTimer
+@onready var explosion := $Explosion
+@onready var explosion_sound := $ExplosionSound
 var damage: int
 var direction: Vector2
 var dying := false
@@ -30,6 +32,8 @@ func die():
 	death_timer.wait_time = animation_player.get_animation("death").length
 	death_timer.start()
 	animation_player.play("death")
+	explosion.emitting = true
+	explosion_sound.play()
 
 
 func hit(damage_in: int):

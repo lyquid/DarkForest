@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://vmnwog5mx04j"]
 
-[ext_resource type="Script" path="res://weapons/torpedo launcher/TorpedoLauncher.gd" id="1_ol5qj"]
+[ext_resource type="Script" path="res://weapons/torpedo launcher/TorpedoLauncher.gd" id="1_b841e"]
 
 [node name="TorpedoLauncher" type="Node2D"]
-script = ExtResource("1_ol5qj")
+script = ExtResource("1_b841e")
 
 [node name="Cooldown" type="Timer" parent="."]
 
