@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/Schrödinger.ttf-5a837613adbe96611ac7ea610246
 Rendering=null
 antialiasing=0
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
